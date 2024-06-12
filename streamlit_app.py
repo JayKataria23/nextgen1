@@ -41,7 +41,7 @@ with st.form("form"):
                                                           "images":images,
                                                           "status":status}]))
         else: 
-            st.warning("Fill all required fields.", "A")
+            st.warning("Fill all required fields.")
                 
 
         
