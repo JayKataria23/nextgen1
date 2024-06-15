@@ -39,7 +39,7 @@ with st.form("form"):
                                                           "location_contact_person":location_contact_person,
                                                           "location_contact_number":location_contact_number,
                                                           "images":images,
-                                                          "status":status}]), ttl=None)
+                                                          "status":status}]), ttl='0')
         else: 
             st.warning("Fill all required fields.")
                 
