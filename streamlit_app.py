@@ -35,7 +35,7 @@ with st.form("form"):
             msg = EmailMessage()
             msg['Subject'] = subject
             msg['From'] = sender
-            content = "New patch reported created\n\n\n\nEngineer: "+engineer_name+"\n\nEngineer Contact Number: "+engineer_contact_number+"\n\nEngineer Email: "+engineer_email+"\n\nLocation: "+location+"\n\nLocation Contact Number: "+location_contact_number+"\n\nLocation Contact Person: "+location_contact_person+"\n\nStatus: "+status+"\n\nImage URL's: "
+            content = "New patch reported created\n\n\n\nEngineer: "+engineer_name+"\n\nEngineer Contact Number: "+engineer_contact_number+"\n\nEngineer Email: "+engineer_email+"\n\nLocation: "+location+"\n\nLocation Contact Number: "+location_contact_number+"\n\nLocation Contact Person: "+location_contact_person+"\n\nStatus: "+status+"\n\nImages in attachments"
             msg.set_content(content)
             images = []
             if image is not None:
