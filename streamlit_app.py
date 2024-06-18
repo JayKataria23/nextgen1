@@ -30,7 +30,7 @@ with st.form("form"):
             msg = EmailMessage()
             subject = "Patch Report "+location+" "+status
             sender = "imbuzixjay@gmail.com"
-            to = ["nxtgen@inmac.co.in"]
+            to = ["nxtgen@inmac.co.in", "support@inmac.co.in"]
             password = "aehl bovs lfaj lybs"
             msg = EmailMessage()
             msg['Subject'] = subject
