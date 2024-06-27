@@ -17,6 +17,8 @@ with st.form("form"):
     location = st.text_input("Location*")
     location_contact_person = st.text_input("Location Contact Person")
     location_contact_number = st.text_input("Location Contact Number")
+    cpu = st.text_area("CPU sereal numbers", placeholder="Seperate by comma")
+    monitor = st.text_area("Monitor sereal numbers", placeholder="Seperate by comma")
     image = st.file_uploader("Add Image", accept_multiple_files=True, type=['png', 'jpg', 'webp', 'jpeg'])
     status = st.selectbox('Status?',('Not Started', 'Completed', 'In Progress'))
 
@@ -35,7 +37,16 @@ with st.form("form"):
             msg = EmailMessage()
             msg['Subject'] = subject
             msg['From'] = sender
-            content = "New patch reported created\n\n\n\nEngineer: "+engineer_name+"\n\nEngineer Contact Number: "+engineer_contact_number+"\n\nEngineer Email: "+engineer_email+"\n\nLocation: "+location+"\n\nLocation Contact Number: "+location_contact_number+"\n\nLocation Contact Person: "+location_contact_person+"\n\nStatus: "+status+"\n\nImages in attachments"
+            content = "New patch reported created\n\n\n\nEngineer: "+engineer_name
+            +"\n\nEngineer Contact Number: "+engineer_contact_number
+            +"\n\nEngineer Email: "+engineer_email
+            +"\n\nLocation: "+location
+            +"\n\nLocation Contact Number: "+location_contact_number
+            +"\n\nLocation Contact Person: "+location_contact_person
+            +"\n\nStatus: "+status
+            +"\n\nCPU: "+cpu
+            +"\n\nMonitor: "+monitor
+            +"\n\nImages in attachments"
             msg.set_content(content)
             images = []
             if image is not None:
@@ -60,6 +71,8 @@ with st.form("form"):
                                                           "location_contact_person":location_contact_person,
                                                           "location_contact_number":location_contact_number,
                                                           "images":images,
+                                                          "cpu":cpu,
+                                                          "monitor":monitor,
                                                           "status":status}]), ttl='0')
         else: 
             st.warning("Fill all required fields.")
